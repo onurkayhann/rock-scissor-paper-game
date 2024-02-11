@@ -5,20 +5,31 @@ const CurrentDate = () => {
     const [currentTime, setCurrentTime] = useState(null);
 
     useEffect(() => {
-        console.log('Fetching data...');
-        fetch('http://192.168.1.243:3000/currentdate')
-            .then((response) => {
-                console.log('Response received:', response);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then((data) => {
-                console.log('Data received:', data);
-                setCurrentTime(data);
-            })
-            .catch((error) => console.error('Error fetching data:', error));
+        const fetchData = () => {
+            fetch('http://192.168.1.243:3000/currentdate')
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(
+                            `HTTP error! Status: ${response.status}`
+                        );
+                    }
+                    return response.text();
+                })
+                .then((data) => {
+                    setCurrentTime(data);
+                })
+                .catch((error) => console.error('Error fetching data:', error));
+        };
+
+        // Fetch data initially
+        fetchData();
+
+        // Update every second
+        const intervalId = setInterval(fetchData, 1000);
+
+        // Cleanup interval on component unmount
+        return () => clearInterval(intervalId);
+        
     }, []);
 
     return (
