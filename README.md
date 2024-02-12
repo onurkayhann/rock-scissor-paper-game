@@ -22,7 +22,7 @@
 
 ## API from backend
 
-### http://localhost:3000/currentdate or replace localhost with your own unique IP address to be able to get current date
+### `http://localhost:3000/currentdate` or replace `localhost` with your own `unique IP address` to be able to get current date
 
 ## Test with jest
 
