@@ -19,3 +19,7 @@
 ## For Android
 
 ### Download Expo Go on your mobile, and run npx expo and scan the QR code
+
+## API from backend
+
+### http://localhost:3000/currentdate or replace localhost with your own unique IP address to be able to get current date
