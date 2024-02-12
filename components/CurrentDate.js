@@ -4,6 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 const CurrentDate = () => {
     const [currentTime, setCurrentTime] = useState(null);
 
+    // either put localhost:3000 or use your own IP to be able
+    // to fetch the endpoint from backend
     useEffect(() => {
         const fetchData = () => {
             fetch('http://192.168.1.243:3000/currentdate')
@@ -29,7 +31,6 @@ const CurrentDate = () => {
 
         // Cleanup interval on component unmount
         return () => clearInterval(intervalId);
-        
     }, []);
 
     return (
@@ -41,6 +42,7 @@ const CurrentDate = () => {
     );
 };
 
+// styles
 const styles = StyleSheet.create({
     currentDateText: {
         color: '#fff',

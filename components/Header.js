@@ -12,6 +12,7 @@ export default function Header() {
     );
 }
 
+// style
 const styles = StyleSheet.create({
     header: {
         height: 80,

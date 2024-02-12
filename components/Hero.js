@@ -13,6 +13,7 @@ const Hero = () => {
     );
 };
 
+// style
 const styles = StyleSheet.create({
     image: {
         width: 400,

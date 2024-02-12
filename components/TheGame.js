@@ -11,6 +11,7 @@ const TheGame = () => {
     const [playerScore, setPlayerScore] = useState(0);
     const [computerScore, setComputerScore] = useState(0);
 
+    // useEffect to determine the winner
     useEffect(() => {
         if (playerScore === 5 || computerScore === 5) {
             // Game ends when someone reaches 5
@@ -106,6 +107,7 @@ const TheGame = () => {
     );
 };
 
+// styles
 const styles = StyleSheet.create({
     buttonContainer: {
         flexDirection: 'row',

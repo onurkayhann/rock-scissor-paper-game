@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import TheGame from './components/TheGame';
 import CurrentDate from './components/CurrentDate';
 
+// app structure
 const App = () => {
     return (
         <View style={styles.container}>
@@ -24,6 +25,7 @@ const App = () => {
     );
 };
 
+// styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,
